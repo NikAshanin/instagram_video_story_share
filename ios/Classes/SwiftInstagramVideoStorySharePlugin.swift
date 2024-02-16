@@ -32,7 +32,9 @@ public class SwiftInstagramVideoStorySharePlugin: NSObject, FlutterPlugin {
                     do {
                         let video = try NSData(contentsOfFile: videoPath!, options: .mappedIfSafe)
                         var pasterboardItems:[[String:Any]]? = nil
-                        pasterboardItems = [["com.instagram.sharedSticker.backgroundVideo": video as Any]]
+                        pasterboardItems = [["com.instagram.sharedSticker.backgroundVideo": video as Any], ["com.instagram.sharedSticker.appID": "6051104998280052"]]
+                        pasteboardItems = 
+
                         UIPasteboard.general.setItems(pasterboardItems!)
                         UIApplication.shared.open(instagramUrl!)
                         resultDictionary["result"] = true
